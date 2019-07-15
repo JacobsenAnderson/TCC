@@ -20,13 +20,13 @@ public class User {
     private String password;
     private String mail;
     private String perfil;
-    private Timestamp bdate;
+    private String bdate;
     
     public User() {
 			
     }
 
-    public User(Integer user_id, String login, String name, String number, String password, String mail, String perfil, Timestamp bdate) {
+    public User(Integer user_id, String login, String name, String number, String password, String mail, String perfil, String bdate) {
         this.user_id = user_id;
         this.login = login;
         this.name = name;
@@ -95,11 +95,11 @@ public class User {
         this.perfil = perfil;
     }
 
-    public Timestamp getBdate() {
+    public String getBdate() {
         return bdate;
     }
 
-    public void setBdate(Timestamp bdate) {
+    public void setBdate(String bdate) {
         this.bdate = bdate;
     }
     

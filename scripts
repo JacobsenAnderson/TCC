@@ -1,0 +1,9 @@
+CREATE TABLE tb_tokens(
+	token_id serial PRIMARY KEY,
+	token INT UNIQUE NOT NULL,
+	login TEXT NOT NULL,
+	password TEXT NOT NULL,
+	HrToken TIMESTAMP NOT NULL
+);
+
+SELECT * from tb_tokens

@@ -9,8 +9,6 @@ import java.sql.Timestamp;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.text.ParseException;
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.User;
@@ -29,23 +27,23 @@ public class UserDAO {
 
     
     /*BUSCAR USUARIO*/
+    
+    
 
     /*Inserir USUARIO */
     public boolean insert(User user){
-        String sql = "INSERT INTO yoursalon_01.tb_users(login,nome,email,senha,telefone,perfil) VALUES(?,?,?,?,?,?)";
+        String sql = "INSERT INTO tb_users(login,name,number,Password,mail,perfil,bdate) VALUES(?,?,?,?,?,?,?);";
         Boolean retorno = false;
         PreparedStatement pst = ConnectionDB.getPreparedStatement(sql);
+        
         try {
-            pst.setString(1, user.getLogin());
-            pst.setString(2, user.getName());
-            pst.setString(3, user.getNumber());
-            pst.setString(4, user.getPassword());
-            pst.setString(5, user.getMail());
-            pst.setString(6, user.getPerfil());
-            
-            SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");         
-            
-            pst.setTimestamp(5, new Timestamp(df.parse(user.getBdate()).getTime()));           
+            pst.setString( 1, user.getLogin() );
+            pst.setString( 2, user.getName() );
+            pst.setString( 3, user.getNumber() );
+            pst.setString( 4, user.getPassword() );
+            pst.setString( 5, user.getMail() );
+            pst.setString( 6, user.getPerfil() );
+            pst.setString( 7, user.getBdate() );     
  
             
             if(pst.executeUpdate()>0)

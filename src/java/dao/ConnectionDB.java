@@ -16,7 +16,7 @@ import java.sql.SQLException;
  */
 public class ConnectionDB {
     private static final String banco = 
-            "jdbc:postgresql://yoursalonishere.ctbx81but96w.sa-east-1.rds.amazonaws.com:5432/postgres";
+            "jdbc:postgresql://localhost:5432/DB_YourSalao";
     /**
      * "jdbc:postgresql://localhost:5432/barbershop";
      * O atributo driver representa a classe do Driver JDBC que será usada na 
